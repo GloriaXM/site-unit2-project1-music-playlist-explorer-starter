@@ -30,7 +30,7 @@ function openModal(card){
     newModal.className = 'modal-overlay';
     newModal.innerHTML = `
         <div id="unique-view' class="modal-content">
-            <button id="close-button" class="close" onclick="this.parentNode.remove()">x</button>  <!-- Code taken from https://stackoverflow.com/questions/19704477/adding-close-button-in-div-to-close-the-box -->
+            <button id="close-button" class="close" onclick="this.parentNode.parentNode.remove()">x</button>  <!-- Code taken from https://stackoverflow.com/questions/19704477/adding-close-button-in-div-to-close-the-box -->
                 <img id="single-thumbnail" class="playlist-thumbnail" src="${card.playlist_art}">
                 <div>
                     <h2>${card.playlist_name}</h2>
@@ -47,18 +47,32 @@ function openModal(card){
 
     // Load in songs
     const songList = document.getElementById('song-list');
-    card.songs.forEach(song => {
+    //Loop using foreach
+    // card.songs.forEach(song => {
+    //     const songCard = document.createElement('div');
+    //     songCard.className = 'song-card';
+    //     songCard.innerHTML = `
+    //         <img class="cover-art" src= ${song.cover_art}>
+    //         <p> ${song.artist}</p>
+    //         <p> ${song.album}</p>
+    //         <p> ${song.duration}</p>
+    //     `;
+    //     songList.appendChild(songCard);
+    // })
+
+    //Load using index
+    for (let i = 0; i < card.songs.length; i++) {
+        const song = card.songs[i];
         const songCard = document.createElement('div');
         songCard.className = 'song-card';
         songCard.innerHTML = `
-            <img class="cover-art" src= ${song.cover_art}>
-            <p> ${song.artist}</p>
-            <p> ${song.album}</p>
-            <p> ${song.duration}</p>
+             <img class="cover-art" src= ${song.cover_art}>
+                <p> ${song.artist}</p>
+                <p> ${song.album}</p>
+                <p> ${song.duration}</p>
         `;
         songList.appendChild(songCard);
-    })
-
+    }
 
 
 
