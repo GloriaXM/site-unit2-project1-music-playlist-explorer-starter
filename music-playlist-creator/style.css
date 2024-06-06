@@ -31,7 +31,7 @@ img {
 .playlist-cards {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 50% 50%;
+    /* grid-template-rows: 50% 50%; */
     border-radius: 20px;
 }
 
