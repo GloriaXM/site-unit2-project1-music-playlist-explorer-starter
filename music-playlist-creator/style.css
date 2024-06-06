@@ -1,58 +1,70 @@
+/* h2 {
+    max-width: 200px;
+} */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #e5d4c0;
+    color: #495159;
     /* border-radius: 10px; */
 }
 
 
 header{
-    background-color: cornflowerblue;
+    background-color: #c5decd;
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    color: #495159;
 }
 
 footer {
-    background-color: cornflowerblue;
+    background-color: #c5decd;
     padding: 1%;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
 
+.playlist-cards {
+    display: flex;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    /* flex-basis: 150pt; */
+    justify-content: flex-start;
+}
+
 img {
     /* object-fit: contain; */
     /* max-width: 9; */
-    max-height: 60%;
-    border-radius: 20px;
-}
-
-.playlist-cards {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    /* grid-template-rows: 50% 50%; */
+    /* max-height: 60%; */
     border-radius: 20px;
 }
 
 .card:hover{
     /* width: 101%; */
-    border-color: chartreuse;
+    border-color: #a1e8cc;
     border-width: thick;
 }
 
 .card {
-    margin: 5%;
+    margin: 1%;
     border: navy;
     border-style: outset;
     border-radius: 20px 20px;
+    color: #495159;
+    min-width: 72pt;
+    width: 20%;
+    height: 25%;
+    padding: 2%
+
 
     /* height: % */
 }
 
 .playlist-thumbnail {
-    max-width: 100%;
-    max-height: 50%;
+    width: 100%
 }
 
 /* .like{
@@ -61,9 +73,15 @@ img {
 
 .modal-content{
     display: flex;
-    justify-content: space-evenly;
 
+}
 
+/* .modal-overlay{
+    position: fixed;
+} */
+
+.cover-art{
+    width: 20%
 }
 
 .close {
