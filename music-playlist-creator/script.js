@@ -10,8 +10,8 @@ function generateCard(card){
         <h2> ${card.playlist_name}</h2>
         <p> ${card.playlist_creator}</p>
         <div class="like-bar">
-            <img class="like">
-            <p>Like Count</p>
+            <button>Here</button>
+            <p>0</p>
         </div>
     `;
     return newCard;
@@ -29,12 +29,14 @@ function openModal(card){
     const newModal = document.createElement('div');
     newModal.className = 'modal-overlay';
     newModal.innerHTML = `
+
         <div id="unique-view' class="modal-content">
             <button id="close-button" class="close" onclick="this.parentNode.parentNode.remove()">x</button>  <!-- Code taken from https://stackoverflow.com/questions/19704477/adding-close-button-in-div-to-close-the-box -->
                 <img id="single-thumbnail" class="playlist-thumbnail" src="${card.playlist_art}">
                 <div>
                     <h2>${card.playlist_name}</h2>
                     <h3> Created by ${card.playlist_creator}</h3>
+                    <h3 class="shuffle-button"> Shuffle </h3>
                     <div id="song-list">
                     </div>
 
@@ -73,7 +75,6 @@ function openModal(card){
         `;
         songList.appendChild(songCard);
     }
-
 
 
 }
