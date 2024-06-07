@@ -7,12 +7,12 @@ function generateCard(card){
     newCard.addEventListener('click', boundOpenModal);
     newCard.innerHTML = `
         <img class="playlist-thumbnail" src="${card.playlist_art}">
-        <h2> ${card.playlist_name}</h2>
+        <h2 class="playlist-name"> ${card.playlist_name}</h2>
         <p> ${card.playlist_creator}</p>
-        <div class="like-bar">
-            <img class="like-icon" src="./assets/img/favicon.ico">
-            <p>0</p>
-        </div>
+        <span class="like-bar">
+            <span class="like-icon">&#9829</h4>
+            <span class="like-count">${card.likeCount}</span>
+        </span>
     `;
     return newCard;
 }
@@ -23,18 +23,18 @@ function loadCards(){
         const newCard = generateCard(card);
         cardDeck.appendChild(newCard);
     })
-    let likes = document.getElementsByClassName("like-icon")
 
+    let likes = document.getElementsByClassName("like-bar")
     for (const single of likes){
         single.addEventListener("click", function(event) {
-            let likeCount = event.target.parentNode.querySelector('p').textContent;
+            console.log(event.target);
+            let likeCount = event.target.parentNode.querySelector('.like-count').textContent;
             ++likeCount;
-            event.target.parentNode.querySelector('p').textContent = likeCount;
-            event.target.parentNode.querySelector('p').style.color = "#c30000";
+            event.target.parentNode.querySelector('.like-count').textContent = likeCount;
+            event.target.parentNode.querySelector('.like-count').style.color = "#c30000";
             event.stopPropagation();
         });
     }
-
 }
 
 function openModal(card){
@@ -79,7 +79,6 @@ function openModal(card){
 
 //shuffle algo taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
-    console.log("HERE");
     let currentIndex = array.length;
 
     // While there remain elements to shuffle...
