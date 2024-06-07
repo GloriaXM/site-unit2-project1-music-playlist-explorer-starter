@@ -26,15 +26,26 @@ function loadCards(){
 
     let likes = document.getElementsByClassName("like-bar")
     for (const single of likes){
+        let clicked = false;
         single.addEventListener("click", function(event) {
-            console.log(event.target);
             let likeCount = event.target.parentNode.querySelector('.like-count').textContent;
-            ++likeCount;
-            event.target.parentNode.querySelector('.like-count').textContent = likeCount;
-            event.target.parentNode.querySelector('.like-count').style.color = "#c30000";
+            if (!clicked){
+                ++likeCount;
+                event.target.parentNode.querySelector('.like-count').textContent = likeCount;
+                event.target.parentNode.querySelector('.like-count').style.color = "#c30000";
+            } else {
+                --likeCount;
+                event.target.parentNode.querySelector('.like-count').textContent = likeCount;
+                event.target.parentNode.querySelector('.like-count').style.color = "#495159";
+            }
+            clicked = !clicked;
+
             event.stopPropagation();
         });
     }
+
+    const addPlaylist = document.createElement('button');
+
 }
 
 function openModal(card){
