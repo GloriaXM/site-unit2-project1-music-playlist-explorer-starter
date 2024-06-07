@@ -43,9 +43,9 @@ function openModal(card){
     <div id="unique-view" class="modal-content">
         <button id="close-button" class="close" onclick="this.parentNode.parentNode.style.display='none';">x</button>
         <img id="single-thumbnail" class="playlist-thumbnail" src="${card.playlist_art}">
+        <h2>${card.playlist_name}</h2>
+        <h3> Created by ${card.playlist_creator}</h3>
         <div>
-            <h2>${card.playlist_name}</h2>
-            <h3> Created by ${card.playlist_creator}</h3>
             <h3 id="shuffle-button"> Shuffle </h3>
             <div id="song-list">
             </div>
@@ -55,7 +55,6 @@ function openModal(card){
 
     // // Load in songs
     const songList = document.getElementById('song-list');
-
     // //Load using index
     for (let i = 0; i < card.songs.length; i++) {
         const song = card.songs[i];
@@ -63,9 +62,11 @@ function openModal(card){
         songCard.className = 'song-card';
         songCard.innerHTML = `
              <img class="cover-art" src= ${song.cover_art}>
+             <div class="song-info">
                 <p> ${song.artist}</p>
                 <p> ${song.album}</p>
                 <p> ${song.duration}</p>
+             </div>
         `;
         songList.appendChild(songCard);
     }
@@ -94,16 +95,21 @@ function shuffle(array) {
     }
 
     const songList = document.getElementById('song-list');
+
+    // //Load using index
+
     songList.innerHTML='';
     for (let i = 0; i < array.length; i++) {
         const song = array[i];
         const songCard = document.createElement('div');
         songCard.className = 'song-card';
         songCard.innerHTML = `
-             <img class="cover-art" src= ${song.cover_art}>
-                <p> ${song.artist}</p>
-                <p> ${song.album}</p>
-                <p> ${song.duration}</p>
+            <img class="cover-art" src= ${song.cover_art}>
+            <div class="song-info">
+            <p> ${song.artist}</p>
+            <p> ${song.album}</p>
+            <p> ${song.duration}</p>
+            </div>
         `;
         songList.appendChild(songCard);
     }

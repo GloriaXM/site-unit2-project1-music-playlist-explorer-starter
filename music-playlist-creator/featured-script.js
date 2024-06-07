@@ -11,7 +11,7 @@ function loadData() {
     playlistImg.src = playlist.playlist_art;
     playlistTitle.textContent = playlist.playlist_name;
     creatorName.textContent = playlist.playlist_creator;
-    likeCount.textContent = playlist.likeCount;
+    likeCount.textContent = `Likes: ${playlist.likeCount}`;
     songList.innerHTML="";
     // //Load using index
     for (let i = 0; i < playlist.songs.length; i++) {
@@ -19,10 +19,12 @@ function loadData() {
         const songCard = document.createElement('div');
         songCard.className = 'song-card';
         songCard.innerHTML = `
-             <img class="cover-art" src= ${song.cover_art}>
+            <img class="cover-art" src= ${song.cover_art}>
+            <div class="song-info">
                 <p> ${song.artist}</p>
                 <p> ${song.album}</p>
                 <p> ${song.duration}</p>
+            </div>
         `;
         songList.appendChild(songCard);
     }

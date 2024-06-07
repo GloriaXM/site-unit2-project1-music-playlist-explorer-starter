@@ -72,9 +72,10 @@ footer {
 
 .modal-content{
     display: flex;
+    flex-direction: column;
     background-color: #c5decd;
-    border-radius: 10%;
-    /* margin-right: 30% */
+    border-radius: 20px;
+    margin: 10%
 
 }
 
@@ -89,18 +90,33 @@ footer {
 } */
 
 .close {
-    /* position: absolute;
+    position: absolute;
     top: 0;
-    right: 0 */
+    right: 0;
     float: right;
     order: 1;
     max-height: 6%
 }
 
 .song-card{
+    display: flex;
+    flex-direction: row;
     border: solid;
     border-color: #495159;
-    border-radius: 10%;
+    border-radius: 0%;
+    margin: 2%;
+}
+
+.cover-art {
+    width: 29%;
+    height: 29%;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-left: 10%;
 }
 
 #shuffle-button{
@@ -109,6 +125,7 @@ footer {
     border-radius: 10px;
     color: #495159;
     text-align: center;
+    margin: 5%
 }
 
 #shuffle-button:hover {
