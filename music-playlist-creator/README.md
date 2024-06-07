@@ -19,9 +19,9 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
   - [x] Create a modal view that displays detailed information about a playlist when a user clicks on a playlist tile.
   - [x] The modal should show the playlist's cover image, name, creator, and a list of songs, including their titles, artists, and durations.
 
-- [ ] **Like Playlists**
+- [x] **Like Playlists**
   - [x] Implement functionality to allow users to like playlists by clicking a heart icon on each playlist tile.
-  - [ ] Update the like count on the playlist tile when a playlist is liked or unliked.
+  - [x] Update the like count on the playlist tile when a playlist is liked or unliked.
 
 - [x] **Shuffle Songs**
   - [x] Enable users to shuffle the songs within a playlist using a shuffle button in the playlist detail modal.
@@ -61,7 +61,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 Add your response here
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
-  
+
 Add your response here
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?

@@ -44,7 +44,12 @@ function loadCards(){
         });
     }
 
-    const addPlaylist = document.createElement('button');
+    // const addPlaylist = document.createElement('button');
+    // addPlaylist.className = 'add-playlist';
+    // addPlaylist.innerHTML = `
+    //     <button id="add-playlist"> Add Playlist </button>
+    // `;
+    // cardDeck.appendChild(addPlaylist);
 
 }
 

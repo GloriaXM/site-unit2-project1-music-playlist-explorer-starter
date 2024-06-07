@@ -127,3 +127,8 @@ footer {
 #shuffle-button:hover {
     background-color: #a1e8cc
 }
+
+#add-playlist{
+    height: 15%;
+    background-color: #a1e8cc;
+}
