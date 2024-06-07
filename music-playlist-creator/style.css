@@ -54,7 +54,7 @@ img {
     border-style: outset;
     border-radius: 20px 20px;
     color: #495159;
-    min-width: 72pt;
+    min-width: 150pt;
     width: 20%;
     height: 25%;
     padding: 2%;
@@ -62,6 +62,7 @@ img {
     flex-direction: column;
     align-content: flex-start;
     justify-content: flex-start;
+    /* background-color: #; */
 
 
     /* height: % */
@@ -71,26 +72,35 @@ img {
     width: 100%;
 }
 
-/* .like-bar{
+.like-bar{
     display: flex;
     align-content: start;
-} */
+    align-self: center;
+    justify-content: center;
 
-.like{
+}
+
+.like-bar:hover {
+    color:#c5decd;
+}
+
+.like-icon{
     width: 13%;
-    height: 13%;
+    height: 10%;
     border-radius: 0%;
-    order: 1;
     z-index: 1;
+    padding: 10%;
+    padding-right: 2%;
 }
 
-.like:hover{
-    color: #495159;
+.like-icon:hover{
     width: 14%;
-    height: 14%;
+    height: 11%;
+    color:#a1e8cc;
 }
 
-.modal-overlay{
+#modal-overlay{
+    display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     top: 0;
@@ -102,7 +112,7 @@ img {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity*/
     width: 100%;
     height: 100%;
-    display: flex;
+    /* display: flex; */
     align-self: center;
 }
 
@@ -110,19 +120,9 @@ img {
     display: flex;
     background-color: #c5decd;
     border-radius: 20%;
-    margin-right: 10%
+    /* margin-right: 30% */
 
 }
-
-.shuffle-button{
-    background-color: #a1e8cc;
-    padding: 5%;
-    border-radius: 10px;
-    color: #495159;
-    text-align: center;
-}
-
-
 
 .cover-art{
     width: 20%
@@ -137,7 +137,21 @@ img {
     max-height: 6%
 }
 
+.song-card{
+    border: solid;
+    border-color: #495159;
+    border-radius: 10%;
+}
+
 #single-thumbnail{
     max-height: 30%;
     max-width: 30%;
+}
+
+#shuffle-button{
+    background-color: #a1e8cc;
+    padding: 5%;
+    border-radius: 10px;
+    color: #495159;
+    text-align: center;
 }
