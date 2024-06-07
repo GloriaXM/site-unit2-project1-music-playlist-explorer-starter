@@ -155,3 +155,8 @@ img {
     color: #495159;
     text-align: center;
 }
+
+#feature{
+    display: flex;
+
+}

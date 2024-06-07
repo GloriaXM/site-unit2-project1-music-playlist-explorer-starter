@@ -74,10 +74,6 @@ function openModal(card){
     const boundShuffle = shuffle.bind(this, card.songs);
     shuffleButton.addEventListener('click', boundShuffle);
 
-    // for (const song of shuffledArray){
-    //     console.log(song);
-    // }
-
     newModal.style.display = 'block';
 }
 
@@ -117,4 +113,6 @@ function shuffle(array) {
   }
 
 
-loadCards();
+document.addEventListener("DOMContentLoaded", () => {
+    loadCards();
+});
