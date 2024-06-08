@@ -14,6 +14,9 @@ function generateCard(card){
             <span class="like-count">${card.likeCount}</span>
         </span>
     `;
+
+    const cardDeck = document.getElementById('card-deck');
+    cardDeck.appendChild(newCard);
     return newCard;
 }
 
@@ -21,7 +24,7 @@ function loadCards(){
     const cardDeck = document.getElementById('card-deck');
     data.playlists.forEach(card => {
         const newCard = generateCard(card);
-        cardDeck.appendChild(newCard);
+        // cardDeck.appendChild(newCard);
     })
 
     let likes = document.getElementsByClassName("like-bar")
@@ -44,13 +47,14 @@ function loadCards(){
         });
     }
 
-    // const addPlaylist = document.createElement('button');
-    // addPlaylist.className = 'add-playlist';
-    // addPlaylist.innerHTML = `
-    //     <button id="add-playlist"> Add Playlist </button>
-    // `;
-    // cardDeck.appendChild(addPlaylist);
-
+    const addPlaylist = document.createElement('button');
+    addPlaylist.id = 'add-playlist';
+    addPlaylist.className = 'card';
+    addPlaylist.innerHTML = `
+        <h2 class="playlist-name"> Add Playlist </h2>
+    `;
+    addPlaylist.onclick = openForm;
+    cardDeck.appendChild(addPlaylist);
 }
 
 function openModal(card){
@@ -131,7 +135,103 @@ function shuffle(array) {
     }
 
     return array;
-  }
+}
+
+function openForm(event) {
+    const form = document.getElementById('form-overlay');
+    form.style.display = 'block';
+}
+
+const addingButton = document.getElementById('add-song');
+//Add another section to enter another song into the playlist
+addingButton.onclick = function (event){
+    event.preventDefault();
+
+    // const entries = document.getElementById('song-entries');
+    // console.log(entries.innerHTML);
+    // entries.innerHTML += `
+    // <label for="song-title"> Song Title: </label>
+    // <input type="text" id="song-title" >
+    // <label for="album"> Album: </label>
+    // <input type="text" id="album" >
+    // <label for="artist"> Artist: </label>
+    // <input type="text" id="artist" >
+    // <label for="duration"> Duration: </label>
+    // <input type="text" id="duration" >
+
+    // `;
+}
+
+const submit = document.getElementById('submit');
+submit.onclick = function (event){
+    event.preventDefault();
+
+    //Load data from form
+    const form = document.getElementById('form-content').value;
+    const playlistName = document.getElementById('playlist-name').value;
+    const creator = document.getElementById('creator').value;
+    const songTitles = document.getElementsByClassName('song-titles');
+    const albums = document.getElementsByClassName('album');
+    const artists = document.getElementsByClassName('artist');
+    const durations = document.getElementsByClassName('duration');
+
+    let songs = [];
+    console.log(songs);
+    for (let i = 0; i < songTitles.length; ++i){
+        songs.push({
+            "songID": i,
+            "title": songTitles[i].value,
+            "artist": artists[i].value,
+            "album" : albums[i].value,
+            "cover_art": "./assets/images/song.png",
+            "duration": durations[i].value
+        })
+    }
+    console.log(songs);
+
+}
+
+// TODO: figure out why the below fxn definition doesn't work
+// assumption: using onclick in HTML was not properly handing off the event
+// function addSong(event){
+//     console.log("submitting")
+//     event.preventDefault();
+//     const entries = document.getElementById('song-entries');
+//     entries.innerHTML += `
+//     <label for="song-title"> Song Title: </label>
+//     <input type="text" id="song-title" >
+//     <label for="artist"> Artist: </label>
+//     <input type="text" id="artist" >
+//     <label for="duration"> Duration: </label>
+//     <input type="text" id="duration" >
+
+//     `;
+// }
+
+//Event listener for submit search button
+// const searchButton = document.getElementById('submit');
+// searchButton.onSubmit = function (event){
+//     console.log(searchButton);
+//     console.log(document.getElementById('search-bar'));
+//     const searchWord = document.getElementById('search-bar').value;
+//     console.log(searchWord);
+// }
+
+const searchInput = document.getElementById('search');
+searchInput.addEventListener("input", function(event){
+    const input = searchInput.value.toLowerCase();
+    const results = data.playlists.filter(function(item) {
+        return item.playlist_name.toLowerCase().includes(input);
+    });
+
+    const cardDeck = document.getElementById('card-deck');
+    cardDeck.innerHTML = "";
+
+    for (const result of results){
+        console.log(result);
+        generateCard(result);
+    }
+})
 
 
 document.addEventListener("DOMContentLoaded", () => {

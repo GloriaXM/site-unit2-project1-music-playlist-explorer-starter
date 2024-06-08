@@ -12,13 +12,14 @@
 <body>
     <header>
         <h1> Music Playlist Explorer</h1>
-        <p> Check out the
-            <div id="navigate"><a href="featured.html"> Featured</a></div>
-            playlist
-        </p>
+        <div id="navigate"><a href="featured.html"> Featured Playlist</a></div>
     </header>
 
     <main>
+        <!-- <form class="search-bar"> -->
+            <input id="search" type="text" class="input" placeholder="Search..."/>
+            <!-- <button id="search-submit" class="submit">Submit</button> -->
+        <!-- </form> -->
         <div id="card-deck" class="playlist-cards">
         </div>
     </main>
@@ -26,10 +27,40 @@
     <div id="modal-overlay">
     </div>
 
+    <div id="form-overlay">
+        <form id="form-content">
+            <button id="close-button" class="close" onclick="this.parentNode.parentNode.style.display='none';">x</button>
+            <h1> Add a New Playlist</h1>
+            <label for="playlist-name"> Playlist Name: </label>
+            <input type="text" id="playlist-name" >
+            <br><br>
+            <label for="creator"> Creator: </label>
+            <input type="text" id="creator" >
+            <div id="song-entries">
+
+            </div>
+            <button id="add-song" >Add Song</button>
+            <button id="submit"> Add Playlist </button>
+        </form>
+    </div>
+
     <footer>
-        <p>Footer</p>
+        <p>Search and explore more playlists</p>
     </footer>
     <script type="module" src="data/data.js"></script>
     <script type="module" src="script.js"></script>
 </body>
 </html>
+
+
+<!-- <div>
+    <h2> Add Song </h2>
+    <label for="song-title"> Song Title: </label>
+    <input type="text" id="song-title" >
+    <label for="artist"> Artist: </label>
+    <input type="text" id="artist" >
+    <label for="duration"> Duration: </label>
+    <input type="text" id="duration" >
+
+    <button id="create-playlist" onclick=""> Create Playlist</button>
+</div> -->
