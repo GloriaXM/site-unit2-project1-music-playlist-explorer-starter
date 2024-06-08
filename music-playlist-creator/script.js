@@ -143,23 +143,22 @@ function openForm(event) {
 }
 
 const addingButton = document.getElementById('add-song');
-//Add another section to enter another song into the playlist
 addingButton.onclick = function (event){
     event.preventDefault();
 
-    // const entries = document.getElementById('song-entries');
-    // console.log(entries.innerHTML);
-    // entries.innerHTML += `
-    // <label for="song-title"> Song Title: </label>
-    // <input type="text" id="song-title" >
-    // <label for="album"> Album: </label>
-    // <input type="text" id="album" >
-    // <label for="artist"> Artist: </label>
-    // <input type="text" id="artist" >
-    // <label for="duration"> Duration: </label>
-    // <input type="text" id="duration" >
+    const entries = document.getElementById('song-entries');
+    const songTitle = document.getElementById('song-title');
+    const album = document.getElementById('album');
+    const artist = document.getElementById('artist');
+    const duration = document.getElementById('duration');
 
-    // `;
+    const song = {
+        "songId": 0,
+
+    }
+    console.log(entries);
+    entries.innerHTML += `
+    `;
 }
 
 const submit = document.getElementById('submit');
@@ -176,7 +175,6 @@ submit.onclick = function (event){
     const durations = document.getElementsByClassName('duration');
 
     let songs = [];
-    console.log(songs);
     for (let i = 0; i < songTitles.length; ++i){
         songs.push({
             "songID": i,
@@ -187,8 +185,6 @@ submit.onclick = function (event){
             "duration": durations[i].value
         })
     }
-    console.log(songs);
-
 }
 
 // TODO: figure out why the below fxn definition doesn't work
@@ -206,15 +202,6 @@ submit.onclick = function (event){
 //     <input type="text" id="duration" >
 
 //     `;
-// }
-
-//Event listener for submit search button
-// const searchButton = document.getElementById('submit');
-// searchButton.onSubmit = function (event){
-//     console.log(searchButton);
-//     console.log(document.getElementById('search-bar'));
-//     const searchWord = document.getElementById('search-bar').value;
-//     console.log(searchWord);
 // }
 
 const searchInput = document.getElementById('search');
