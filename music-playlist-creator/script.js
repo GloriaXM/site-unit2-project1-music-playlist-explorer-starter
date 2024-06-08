@@ -1,5 +1,7 @@
 import {data} from './data/data.js';
+let songsToAdd = [];
 
+//Handles generating the html for a single playlist card
 function generateCard(card){
     const newCard = document.createElement('button');
     newCard.className = 'card';
@@ -20,13 +22,14 @@ function generateCard(card){
     return newCard;
 }
 
+//Loads the entire deck of playlist cards
 function loadCards(){
     const cardDeck = document.getElementById('card-deck');
     data.playlists.forEach(card => {
         const newCard = generateCard(card);
-        // cardDeck.appendChild(newCard);
     })
 
+    //Add like bar functionality after loading
     let likes = document.getElementsByClassName("like-bar")
     for (const single of likes){
         let clicked = false;
@@ -47,6 +50,7 @@ function loadCards(){
         });
     }
 
+    //Add load playlist button
     const addPlaylist = document.createElement('button');
     addPlaylist.id = 'add-playlist';
     addPlaylist.className = 'card';
@@ -73,9 +77,8 @@ function openModal(card){
     </div>
     `;
 
-    // // Load in songs
+    // // Load in songs from data
     const songList = document.getElementById('song-list');
-    // //Load using index
     for (let i = 0; i < card.songs.length; i++) {
         const song = card.songs[i];
         const songCard = document.createElement('div');
@@ -137,11 +140,13 @@ function shuffle(array) {
     return array;
 }
 
+//Event handler for adding a playlist
 function openForm(event) {
     const form = document.getElementById('form-overlay');
     form.style.display = 'block';
 }
 
+//Event handler to load song data on click
 const addingButton = document.getElementById('add-song');
 addingButton.onclick = function (event){
     event.preventDefault();
@@ -153,15 +158,19 @@ addingButton.onclick = function (event){
     const duration = document.getElementById('duration');
 
     const song = {
-        "songId": 0,
-
+        "songId": songsToAdd.length,
+        "songTitle": songTitle.value,
+        "album": album.value,
+        "artist": artist.value,
+        "cover_art": "./assets/img/song.png",
+        "duration": duration.value
     }
-    console.log(entries);
-    entries.innerHTML += `
-    `;
+
+    songsToAdd.push(song);
 }
 
-const submit = document.getElementById('submit');
+//Event handler to save playlist into data json
+const submit = document.getElementById('submit-playlist');
 submit.onclick = function (event){
     event.preventDefault();
 
@@ -173,18 +182,19 @@ submit.onclick = function (event){
     const albums = document.getElementsByClassName('album');
     const artists = document.getElementsByClassName('artist');
     const durations = document.getElementsByClassName('duration');
+    const playlistId = data.playlists.length;
 
-    let songs = [];
-    for (let i = 0; i < songTitles.length; ++i){
-        songs.push({
-            "songID": i,
-            "title": songTitles[i].value,
-            "artist": artists[i].value,
-            "album" : albums[i].value,
-            "cover_art": "./assets/images/song.png",
-            "duration": durations[i].value
-        })
-    }
+    data.playlists.push({
+        "playlistID": playlistId,
+        "playlist-name": playlistName,
+        "playlist_creator": creator,
+        "playlist-art": "./assets/img/playlist.png",
+        "likeCount": 0,
+        "songs": songsToAdd
+    });
+
+    // TODO: loadCards into view
+    // loadCards();
 }
 
 // TODO: figure out why the below fxn definition doesn't work
@@ -204,6 +214,7 @@ submit.onclick = function (event){
 //     `;
 // }
 
+//Search bar functionality
 const searchInput = document.getElementById('search');
 searchInput.addEventListener("input", function(event){
     const input = searchInput.value.toLowerCase();
@@ -215,7 +226,6 @@ searchInput.addEventListener("input", function(event){
     cardDeck.innerHTML = "";
 
     for (const result of results){
-        console.log(result);
         generateCard(result);
     }
 })

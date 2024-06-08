@@ -31,7 +31,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 - [ ] **Add New Playlists**
   - [ ] Allow users to create new playlists.
-  - [ ] Users can input playlist name, creator, and add multiple songs with details like title, artist, and duration.
+  - [x] Users can input playlist name, creator, and add multiple songs with details like title, artist, and duration.
 
 - [ ] **Edit Existing Playlists**
   - [ ] Enable users to modify the details of existing playlists.
@@ -42,8 +42,8 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
   - [ ] Add a delete button to each playlist tile.
   - [ ] When clicked, the playlist is removed from the display and data model.
 
-- [ ] **Search Functionality**
-  - [ ] Implement a search bar that allows users to filter playlists by name or creator.
+- [x] **Search Functionality**
+  - [x] Implement a search bar that allows users to filter playlists by name or creator.
 
 - [ ] **Sorting Options**
   - [ ] Implement a dropdown or button options that allow users to sort the playlist by name, number of likes, or date added.
@@ -58,15 +58,14 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I had the most trouble understanding the intuition behind the flow of CSS attributes. I feel as though I could have done with more code-along practice.
+
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
-
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I liked how, after I realized that I was ffalling behind, I was able to pivot my priorities toward getting the minimal product working. As a result, I feel like I achieved the best balance of UI and functionality that I could have with my limited prior experience. I was thoroughly impressed with many of my classmates' UI, so I would like to try to reach a higher level of design in the next project.
 
 ### Open-source libraries used
 
@@ -75,3 +74,4 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+SAMMY

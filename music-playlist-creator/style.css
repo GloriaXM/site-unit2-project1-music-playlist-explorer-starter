@@ -103,7 +103,6 @@ footer {
     right: 0;
     float: right;
     order: 1;
-    max-height: 6%
 }
 
 .song-card{
@@ -123,6 +122,7 @@ footer {
 .song-info {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-content: center;
     margin-left: 10%;
 }
@@ -175,4 +175,8 @@ footer {
 #search{
     width: 30%;
     max-width: 250pt;
+}
+
+#cover-art {
+    width: 20%;
 }
