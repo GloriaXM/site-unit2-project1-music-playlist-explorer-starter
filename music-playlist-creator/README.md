@@ -50,9 +50,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+Video size too large to embed
 
 ### Reflection
 
