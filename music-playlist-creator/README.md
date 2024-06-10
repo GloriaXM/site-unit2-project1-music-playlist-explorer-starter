@@ -61,6 +61,8 @@ I had the most trouble understanding the intuition behind the flow of CSS attrib
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
+I would have spent much less time on the css portion of the code. I had trouble debugging my css, and that time spent detracted from my time working on flex features. For the next time, I'll organize my structure better to require less time for debugging, and move on quicker if I reach a block.
+
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
 I liked how, after I realized that I was ffalling behind, I was able to pivot my priorities toward getting the minimal product working. As a result, I feel like I achieved the best balance of UI and functionality that I could have with my limited prior experience. I was thoroughly impressed with many of my classmates' UI, so I would like to try to reach a higher level of design in the next project.
@@ -73,3 +75,7 @@ I liked how, after I realized that I was ffalling behind, I was able to pivot my
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 SAMMY
+
+
+
+https://github.com/GloriaXM/site-unit2-project1-music-playlist-explorer-starter/assets/112780860/c4c2796d-49ed-42cd-8208-2ba2b29c8881
