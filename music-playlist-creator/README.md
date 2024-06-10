@@ -78,4 +78,8 @@ SAMMY
 
 
 
-https://github.com/GloriaXM/site-unit2-project1-music-playlist-explorer-starter/assets/112780860/c4c2796d-49ed-42cd-8208-2ba2b29c8881
+
+
+https://github.com/GloriaXM/site-unit2-project1-music-playlist-explorer-starter/assets/112780860/40a1634c-f6d3-4a64-b993-70ff60873b94
+
+
